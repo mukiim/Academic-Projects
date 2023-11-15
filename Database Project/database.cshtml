@@ -1,0 +1,25 @@
+@{
+var db = Database.Open("T"); 
+var query = "SELECT * FROM T"; 
+}
+<html> 
+<body> 
+<h1>id</h1> 
+<table border="1" width="100%"> 
+<tr>
+<th>Id</th> 
+<th>name</th> 
+<th>dept</th> 
+</tr>
+@foreach(var row in db.Query(query))
+{
+<tr> 
+<td>@row.Id</td> 
+<td>@row.Name</td> 
+<td>@row.dept</td> 
+<td style="text-align:right">@row.Price</td> 
+</tr> 
+}
+</table> 
+</body> 
+</html>
